@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Burger Constructor</title>
+  </head>
+  <body>
+    <script>
+	  class Burger {
+		constructor (arr) {	 
+		  this.title = arr[0];
+		  this.size = arr[1];
+	      this.calories = arr[2];
+		  this.price = arr[3];		  
+	    }
+		addTopping(item) {
+		  this.title += (' + ' +item[0]);
+		  this.calories += item[1];
+		  this.price += item[2]; 	
+		}
+		calculateCalories() {
+		  return this.calories;
+		}
+		calculatePrice() {
+		  return this.price;
+		}
+	  };
+	  
+	  
+	   Burger.HUMBURGER_SMALL = ['Hamburger', 'Small', 290, 10];
+	   Burger.HUMBURGER_BIG = ['Hamburger', 'Big', 350, 20];
+	   Burger.CHEESEBURGER_SMALL = ['Cheeseburger', 'Small', 305, 15];
+	   Burger.CHEESEBURGER_BIG = ['Cheeseburger', 'Big', 360, 25];
+	   Burger.TOPPING_MAYO = ['Mayo', 15, 2];
+	   Burger.TOPPING_SAUCE = ['Sauce', 25, 3];
+      
+	  
+	  let hamburger = new Burger(Burger.HUMBURGER_SMALL);
+	  hamburger.addTopping(Burger.TOPPING_MAYO);
+	  
+	  
+	  console.log(hamburger);
+	  console.log('Calories: ' + hamburger.calculateCalories());
+	  console.log('Price: ' + hamburger.calculatePrice() +'$');
+	  
+	  hamburger.addTopping(Burger.TOPPING_SAUCE);
+	  console.log('Price with sauce: ' + hamburger.calculatePrice() +'$');
+	  console.log(hamburger);
+	  	  
+    </script>
+  </body>
+</html>
