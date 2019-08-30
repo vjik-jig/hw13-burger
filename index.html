@@ -28,16 +28,19 @@
 		}
 	  };
 	  
+	  class Cheeseburger extends Burger {};
 	  
-	   Burger.HUMBURGER_SMALL = ['Hamburger', 'Small', 290, 10];
-	   Burger.HUMBURGER_BIG = ['Hamburger', 'Big', 350, 20];
-	   Burger.CHEESEBURGER_SMALL = ['Cheeseburger', 'Small', 305, 15];
-	   Burger.CHEESEBURGER_BIG = ['Cheeseburger', 'Big', 360, 25];
+	  
+	   Burger.SIZE_SMALL = ['Hamburger', 'Small', 290, 10];
+	   Burger.SIZE_BIG = ['Hamburger', 'Big', 350, 20];
+	   Cheeseburger.SIZER_SMALL = ['Cheeseburger', 'Small', 305, 15];
+	   Cheeseburger.SIZE_BIG = ['Cheeseburger', 'Big', 360, 25];
+	   Cheeseburger.DOUBLE_CHEESE = ['Double Cheese', 10, 4];
 	   Burger.TOPPING_MAYO = ['Mayo', 15, 2];
 	   Burger.TOPPING_SAUCE = ['Sauce', 25, 3];
       
 	  
-	  let hamburger = new Burger(Burger.HUMBURGER_SMALL);
+	  let hamburger = new Burger(Burger.SIZE_SMALL);
 	  hamburger.addTopping(Burger.TOPPING_MAYO);
 	  
 	  
@@ -48,6 +51,20 @@
 	  hamburger.addTopping(Burger.TOPPING_SAUCE);
 	  console.log('Price with sauce: ' + hamburger.calculatePrice() +'$');
 	  console.log(hamburger);
+	  
+	  // Cheeseburger
+	  
+	  let cheeseburger = new Cheeseburger(Cheeseburger.SIZE_BIG);
+	  cheeseburger.addTopping(Burger.TOPPING_SAUCE);
+	  console.log(cheeseburger);
+	  console.log('Calories: ' + cheeseburger.calculateCalories());
+	  console.log('Price: ' + cheeseburger.calculatePrice() +'$');
+	  
+	  cheeseburger.addTopping(Cheeseburger.DOUBLE_CHEESE);
+	  console.log('Price with Adds: ' + cheeseburger.calculatePrice() +'$');
+	  console.log(cheeseburger);
+	  
+	  
 	  	  
     </script>
   </body>
